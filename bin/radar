@@ -1,0 +1,108 @@
+#!/bin/sh
+# radar.sh - retrieves NEXRAD doppler radar imagery from all sites in the USA.
+# (worldwide NEXRAD sites coming someday)
+
+radarfile=/usr/local/share/radar/radars.txt
+url=https://radar.weather.gov/lite/N0R/
+siteregex="^[A-Za-z][A-Za-z][A-Za-z]$"
+
+viewsite() {
+  [ -z "$(which mpv)" ] && echo "This script depends on mpv, but you don't have it installed (or maybe it's not in your \$PATH.)" && exit
+  [ "$2" = "-v" ] && mpv $1 --loop-file=inf --no-osc || mpv $1 --loop-file=inf --no-osc > /dev/null 2>&1
+}
+
+list() {
+  cat $radarfile
+}
+
+makeurl() {
+  echo $url$(caps $1)_loop.gif
+}
+
+search() {
+  grep "$1" $radarfile
+}
+
+caps() {
+  echo $1 | tr [:lower:] [:upper:]
+}
+
+hasspaces() {
+  [ $(echo $1 | grep \  | wc -l) -gt 0 ] && echo "yes" || echo "no"
+}
+
+siteorcity() {
+  [ $(hasspaces "$1") = yes ] && echo "city" && exit 
+  [ $(expr "$1" : "$siteregex") -eq 3 ] && [ $(hasspaces "$1") = "no" ] && echo "site" || echo "city"
+}
+
+findsite() {
+  echo $(echo $(search "$1") | cut -f2 -d":")
+}
+
+exists() {
+  [ $(findsite "$1" | wc -m) -ne 1 ] && echo "yes" || echo "no"
+}
+
+inputwrapper() {
+  [ $(exists "$1") = "no" ] && exit
+  [ $(siteorcity "$1") = "site" ] && makeurl $1
+  [ $(siteorcity "$1") = "city" ] && makeurl $(findsite $1)
+}
+
+help() {
+cat << EOF
+radar - National Weather Service (NWS) Doppler radar from the command line.
+Written in 2020 by Ray Patrick.
+
+Options:
+
+  $ radar ABC
+    Display the latest Doppler radar imagery from the site with the ICAO
+    code ending with "ABC." For example, Memphis International Airport is KNQA.
+    Running "radar nqa" will display the latest Doppler radar imagery from Memphis, TN.
+
+  $ radar "City"
+    If the argument is a city name, radar will do its best to find the corresponding
+    city in the list. While it's not strictly necessary to enclose single-word city
+    names in quotes (e.g. "Chicago") it's best practice to always do so. For city
+    names with multiple words (e.g. "Los Angeles") quotes are mandatory.
+    Cities with similar names may match each other and give unwanted results. For
+    instance, running 'radar "Jackson"' will show imagery for Jacksonville, FL.
+    To avoid this, be specific and search for "Jackson, MS" or "Jacksonville, FL."
+    Lastly, cities are case-sensitive.
+
+  $ radar -l, --list
+    List all the NWS NEXRAD Doppler radar sites in the USA.
+
+  $ radar -s, --search XYZ
+    Filter the output of "radar list" with the regular expression XYZ.
+    For instance, you could list all the Doppler radars in the state of Texas
+    by running "radar search TX:" or find the site for Chicago, IL by running
+    "radar search Chicago", or list all the sites at US Air Force bases by
+    running "radar search AFB."
+
+  $ radar -u, --url "City"
+    Instead of opening the URL of "City's" radar imagery, just print it to stdout.
+
+  $ radar -h, --help
+    Display this help and exit. Type 'man radar' for more thorough documentation.
+
+EOF
+}
+case "$2" in
+     *-*) echo "radar: options must come before arguments." && echo "See 'man radar' or type 'radar --help' for usage instructions." && exit
+esac
+
+case "$1" in
+      -l) list ;;
+  --list) list ;;
+      -h) help ;;
+  --help) help ;;
+--search) search "$2" ;;
+      -s) search "$2" ;;
+   --url) inputwrapper "$2" ;;
+      -u) inputwrapper "$2" ;;
+      -f) findsite "$2" ;;
+       *) [ -z "$1" ] && help || viewsite $(inputwrapper "$1") ;;
+esac

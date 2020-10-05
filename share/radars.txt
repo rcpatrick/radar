@@ -1,0 +1,153 @@
+Bethel, AK: ABC
+Fairbanks, AK: APD
+Kenai, AK: AHG
+King Salmon, AK: AKC
+Middleton Island, AK: AIH
+Nome, AK: AEC
+Sitka, AK: ACG
+Birmingham, AL: BMX
+Fort Rucker, AL: EOX
+Huntsville, AL: HTX
+Maxwell AFB, AL: MXX
+Mobile, AL: MOB
+Fort Smith, AR: SRX
+Little Rock, AR: LZK
+Flagstaff, AZ: FSX
+Phoenix, AZ: IWA
+Tucson, AZ: EMX
+Beale AFB, CA: BBX
+Edwards AFB, CA: EYX
+Eureka, CA: BHX
+Los Angeles, CA: VTX
+Sacramento, CA: DAX
+San Diego, CA: NKX
+San Francisco, CA: MUX
+San Joaquin Valley, CA: HNX
+Santa Ana Mountains, CA: SOX
+Vandenberg AFB, CA: VBX
+Denver, CO: FTG
+Grand Junction, CO: GJX
+Pueblo, CO: PUX
+Dover AFB, DE: DOX
+Eglin AFB, FL: EVX
+Jacksonville, FL: JAX
+Key West, FL: BYX
+Melbourne, FL: MLB
+Miami, FL: AMX
+Tallahassee, FL: TLH
+Tampa, FL: TBW
+Atlanta, GA: FFC
+Moody AFB, GA: VAX
+Robins AFB, GA: JGX
+Kauai, HI: HKI
+Kohala, HI: HKM
+Molokai, HI: HMO
+South Shore, HI: HWA
+Davenport, IA: DVN
+Des Moines, IA: DMX
+Boise, ID: CBX
+Pocatello, ID: SFX
+Chicago, IL: LOT
+Lincoln, IL: ILX
+Owensville, IN: VWX
+Indianapolis, IN: IND
+North Webster, IN: IWX
+Dodge City, KS: DDC
+Goodland, KS: GLD
+Topeka, KS: TWX
+Wichita, KS: ICT
+Fort Campbell, KY: HPX
+Jackson, KY: JKL
+Louisville, KY: LVX
+Paducah, KY: PAH
+Fort Polk, LA: POE
+Lake Charles, LA: LCH
+New Orleans, LA: LIX
+Shreveport, LA: SHV
+Boston, MA: BOX
+Houlton, ME: CBW
+Gray, ME: GYX
+Detroit, MI: DTX
+Gaylord, MI: APX
+Grand Rapids, MI: GRR
+Marquette, MI: MQT
+Duluth, MN: DLH
+Minneapolis, MN: MPX
+Kansas City, MO: EAX
+Springfield, MO: SGF
+St. Louis, MO: LSX
+Jackson, MS: DGX
+Columbus AFB, MS: GWX
+Billings, MT: BLX
+Glasgow, MT: GGW
+Great Falls, MT: TFX
+Missoula, MT: MSX
+Morehead City, NC: HMX
+Raleigh, NC: RAX
+Wilmington, NC: LTX
+Bismarck, ND: BIS
+Grand Forks (Mayville), ND: MVX
+Minot AFB, ND: MBX
+Grand Island, NE: UEX
+North Platte, NE: LNX
+Omaha, NE: OAX
+Albuquerque, NM: ABX
+Cannon AFB, NM: FDX
+Holloman AFB, NM: HDX
+Elko, NV: LRX
+Las Vegas, NV: ESX
+Reno, NV: RGX
+Albany, NY: ENX
+Binghamton, NY: BGM
+Buffalo, NY: BUF
+Montague, NY: TYX
+New York City, NY: OKX
+Wilmington, OH: ILN
+Cleveland, OH: CLE
+Frederick, OK: FDR
+Oklahoma City, OK: TLX
+Tulsa, OK: INX
+Vance AFB, OK: VNX
+Medford, OR: MAX
+Pendleton, OR: PDT
+Portland, OR: RTX
+Philadelphia, PA: DIX
+Pittsburgh, PA: PBZ
+State College, PA: CCX
+Charleston, SC: CLX
+Columbia, SC: CAE
+Greer, SC: GSP
+Aberdeen, SD: ABR
+Rapid City, SD: UDX
+Sioux Falls, SD: FSD
+Knoxville, TN: MRX
+Memphis, TN: NQA
+Nashville, TN: OHX
+Amarillo, TX: AMA
+Austin, TX: EWX
+Brownsville, TX: BRO
+Corpus Christi, TX: CRP
+Dallas, TX: FWS
+Dyess AFB, TX: DYX
+El Paso, TX: EPZ
+Fort Hood, TX: GRK
+Houston, TX: HGX
+Laughlin AFB, TX: DFX
+Lubbock, TX: LBB
+Midland, TX: MAF
+San Angelo, TX: SJT
+Cedar City, UT: ICX
+Salt Lake City, UT: MTX
+Norfolk, VA: AKQ
+Roanoke, VA: FCX
+Sterling, VA: LWX
+Burlington, VT: CXX
+Langley Hill, WA: LGX
+Seattle, WA: ATX
+Spokane, WA: OTX
+Green Bay, WI: GRB
+La Crosse, WI: ARX
+Milwaukee, WI: MKX
+Charleston, WV: RLX
+Cheyenne, WY: CYS
+Riverton, WY: RIW
