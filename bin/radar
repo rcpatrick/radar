@@ -45,7 +45,7 @@ exists() {
 }
 
 inputwrapper() {
-  [ $(exists "$1") = "no" ] && exit
+  [ $(exists "$1") = "no" ] && [ $(exists $(caps "$1")) = "no" ] && exit
   [ $(siteorcity "$1") = "site" ] && makeurl $1
   [ $(siteorcity "$1") = "city" ] && makeurl $(findsite $1)
 }
@@ -90,9 +90,9 @@ Options:
 
 EOF
 }
-case "$2" in
-     *-*) echo "radar: options must come before arguments." && echo "See 'man radar' or type 'radar --help' for usage instructions." && exit
-esac
+#case "$2" in
+#     *-*) echo "radar: options must come before arguments." && echo "See 'man radar' or type 'radar --help' for usage instructions." && exit
+#esac
 
 case "$1" in
       -l) list ;;
@@ -103,6 +103,15 @@ case "$1" in
       -s) search "$2" ;;
    --url) inputwrapper "$2" ;;
       -u) inputwrapper "$2" ;;
-      -f) findsite "$2" ;;
-       *) [ -z "$1" ] && help || viewsite $(inputwrapper "$1") ;;
+       *) case "$2" in
+         -l) list ;;
+     --list) list ;;
+         -h) help ;;
+     --help) help ;;
+         -s) search "$1" ;;
+   --search) search "$1" ;;
+         -u) inputwrapper "$1" ;;
+      --url) inputwrapper "$1" ;;
+          *) [ -z "$1" ] && help || viewsite $(inputwrapper "$1") ;;
+          esac
 esac
