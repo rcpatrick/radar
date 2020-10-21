@@ -47,7 +47,7 @@ exists() {
 inputwrapper() {
 	[ $(exists "$1") = "no" ] && [ $(exists $(caps "$1")) = "no" ] && exit
 	[ $(siteorcity "$1") = "site" ] && makeurl $1
-	[ $(siteorcity "$1") = "city" ] && makeurl $(findsite $1)
+	[ $(siteorcity "$1") = "city" ] && makeurl $(findsite "$1")
 }
 
 help() {
