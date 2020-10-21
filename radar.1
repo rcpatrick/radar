@@ -20,15 +20,15 @@ necessary to enclose single word names in quotes (e.g. "Chicago"), it's
 best practice to always do so. For city names containing spaces
 (e.g. "Los Angeles"), quotes are mandatory. Cities with similar names may
 match each other and give unwanted results. For instance, running "radar Jackson"
-will show imagery for Jacksonville, FL. To avoid this, be specific and type
-radar "Jackson, MS" or "Jacksonville, FL" instead. Lastly, cities are
+will show imagery for Jackson, KY. To avoid this, be specific and type
+radar "Jackson, MS" or "Jackson, KY" instead. Lastly, cities are
 case-sensitive.
 .TP
 .B radar --list, -l
-Will print a list of every NEXRAD Doppler radar in the United States showing city, state, and ICAO code. You can pipe this into a pager or filter it with any command-line tool of your choice. The information is stored in /usr/local/radar/share/radars.csv. 
+Will print a list of every NEXRAD Doppler radar in the United States showing city, state, and ICAO code. You can pipe this into a pager or filter it with any command-line tool of your choice. The information is stored in /usr/local/radar/share/radars.txt. 
 .TP
 .B radar --search, -s [XYZ]
-This is really a shortcut for piping the output of "radar list" into grep(1). [XYZ] can be any regular expression. For example, you can look up sites by US state if you know its postal code, e.g. you can list all sites in Texas by issuing the command "radar --search TX:". Or, you can filter for Air Force bases with "radar --search AFB." You can look up cities by name also, e.g. "radar --search 'Los Angeles'".
+This is a shortcut for grep -w [XYZ] radars.txt. [XYZ] can be any regular expression. For example, you can look up sites by US state if you know its postal code, e.g. you can list all sites in Texas by issuing the command "radar --search TX:". Or, you can filter for Air Force bases with "radar --search AFB." You can look up cities by name also, e.g. "radar --search 'Los Angeles'".
 .TP
 .B radar --url, -u [ABC]
 Print the URL for the site "ABC" to stdout.
