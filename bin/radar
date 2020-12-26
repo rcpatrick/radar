@@ -3,7 +3,8 @@
 # (worldwide NEXRAD sites coming someday)
 
 radarfile=/usr/local/share/radar/radars.txt
-url=https://radar.weather.gov/lite/N0R/
+#url=https://radar.weather.gov/lite/N0R/
+url=https://radar.weather.gov/ridge/lite/
 siteregex="^[A-Za-z][A-Za-z][A-Za-z]$"
 
 viewsite() {
@@ -16,11 +17,11 @@ list() {
 }
 
 makeurl() {
-	echo $url$(caps $1)_loop.gif
+	echo ${url}K$(caps $1)_loop.gif
 }
 
 search() {
-	grep "$1" $radarfile
+	grep -w "$1" $radarfile
 }
 
 caps() {
