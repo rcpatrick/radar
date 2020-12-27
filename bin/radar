@@ -3,11 +3,10 @@
 # (worldwide NEXRAD sites coming someday)
 
 radarfile=/usr/local/share/radar/radars.txt
-#url=https://radar.weather.gov/lite/N0R/
-url=https://radar.weather.gov/ridge/lite/
-siteregex="^[A-Za-z][A-Za-z][A-Za-z]$"
+baseurl=https://radar.weather.gov/ridge/lite/
+siteregex="^[K|P][A-Za-z][A-Za-z][A-Za-z]$"
 
-viewsite() {
+viewsite() { # use viewsite $url -v for verbose output
 	[ -z "$(which mpv)" ] && echo "This script depends on mpv, but you don't have it installed (or maybe it's not in your \$PATH.)" && exit
 	[ "$2" = "-v" ] && mpv $1 --loop-file=inf --no-osc || mpv $1 --loop-file=inf --no-osc > /dev/null 2>&1
 }
@@ -17,7 +16,7 @@ list() {
 }
 
 makeurl() {
-	echo ${url}K$(caps $1)_loop.gif
+	echo ${baseurl}$(caps $1)_loop.gif
 }
 
 search() {
@@ -34,7 +33,7 @@ hasspaces() {
 
 siteorcity() {
 	[ $(hasspaces "$1") = yes ] && echo "city" && exit 
-	[ $(expr "$1" : "$siteregex") -eq 3 ] && [ $(hasspaces "$1") = "no" ] && echo "site" || echo "city"
+	[ $(expr "$1" : "$siteregex") -eq 4 ] && [ $(hasspaces "$1") = "no" ] && echo "site" || echo "city"
 }
 
 findsite() {
@@ -58,33 +57,31 @@ Written in 2020 by Ray Patrick.
 
 Options:
 
-  $ radar ABC
-    Display the latest Doppler radar imagery from the site with the ICAO
-    code ending with "ABC." For example, Memphis International Airport is KNQA.
-    Running "radar nqa" will display the latest Doppler radar imagery from Memphis, TN.
+  $ radar [sitecode|city] 
+    Display the latest Doppler radar imagery from the specified site. "sitecode" is any
+    ICAO code. For example, the ICAO code for Memphis International Airport is KNQA.
+    Running "radar knqa" will display the latest Doppler radar imagery from Memphis, TN.
 
-  $ radar "City"
     If the argument is a city name, radar will do its best to find the corresponding
     city in the list. While it's not strictly necessary to enclose single-word city
     names in quotes (e.g. "Chicago") it's best practice to always do so. For city
     names with multiple words (e.g. "Los Angeles") quotes are mandatory.
-    Cities with similar names may match each other and give unwanted results. For
-    instance, running 'radar "Jackson"' will show imagery for Jacksonville, FL.
-    To avoid this, be specific and search for "Jackson, MS" or "Jacksonville, FL."
-    Lastly, cities are case-sensitive.
+    Cities are case-sensitive.
 
   $ radar -l, --list
     List all the NWS NEXRAD Doppler radar sites in the USA.
 
-  $ radar -s, --search XYZ
-    Filter the output of "radar list" with the regular expression XYZ.
+  $ radar -s, --search [regex] 
+    Match the output of "radar --list" against a regular expression.
     For instance, you could list all the Doppler radars in the state of Texas
     by running "radar search TX:" or find the site for Chicago, IL by running
     "radar search Chicago", or list all the sites at US Air Force bases by
     running "radar search AFB."
 
-  $ radar -u, --url "City"
-    Instead of opening the URL of "City's" radar imagery, just print it to stdout.
+  $ radar -u, --url [sitecode|city] 
+    Print the generated URL to standard output instead of opening it with mpv(1). Useful
+    in case you don't want to use mpv(1) wish instead to open the imagery with, say, a
+    Web browser, or curl(1) or wget(1) it.
 
   $ radar -h, --help
     Display this help and exit. Type 'man radar' for more thorough documentation.
