@@ -4,7 +4,7 @@
 
 radarfile=/usr/local/share/radar/radars.txt
 baseurl=https://radar.weather.gov/ridge/lite/
-siteregex="^[K|P][A-Za-z][A-Za-z][A-Za-z]$"
+siteregex="^[Kk|Pp][A-Za-z][A-Za-z][A-Za-z]$"
 
 viewsite() { # use viewsite $url -v for verbose output
 	[ -z "$(which mpv)" ] && echo "This script depends on mpv, but you don't have it installed (or maybe it's not in your \$PATH.)" && exit
