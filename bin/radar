@@ -1,6 +1,7 @@
 #!/bin/sh
 # radar.sh - retrieves NEXRAD doppler radar imagery from all sites in the USA.
 
+
 radarfile=/usr/local/share/radar/radars.txt
 baseurl=https://radar.weather.gov/ridge/lite/
 siteregex="^[Kk|Pp][A-Za-z][A-Za-z][A-Za-z]$"
