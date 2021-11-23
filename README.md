@@ -5,7 +5,7 @@ View National Weather Service (NWS) Doppler radar from the command line!
 ## Install and Use
 From Github:
 ```
-git clone https://github.com/rcpatrick/radar
+git clone https://github.com/rcpatrick/radar.git
 ```
 From my website:
 ```
