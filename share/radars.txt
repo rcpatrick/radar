@@ -1,3 +1,19 @@
+Alaska: ALASKA
+Caribbean: CARIB
+Central Great Lakes: CENTGRLAKES
+CONUS: CONUS
+CONUS-LARGE: CONUS-LARGE
+Guam: GUAM
+Hawaii: HAWAII
+Northeast: NORTHEAST
+North Rockies: NORTHROCKIES
+Pacific Northwest: PACNORTHWEST
+Pacific Southwest: PACSOUTHWEST
+Southeast: SOUTHEAST
+South Mississippi Valley: SOUTHMISSVLY
+South Plains: SOUTHPLAINS
+South Rockies: SOUTHROCKIES
+Upper Mississippi Valley: UPPERMISSVLY
 Bethel, AK: PABC
 Fairbanks, AK: PAPD
 Kenai, AK: PAHG
@@ -15,6 +31,7 @@ Little Rock, AR: KLZK
 Flagstaff, AZ: KFSX
 Phoenix, AZ: KIWA
 Tucson, AZ: KEMX
+Yuma, AZ: KYUX
 Beale AFB, CA: KBBX
 Edwards AFB, CA: KEYX
 Eureka, CA: KBHX
@@ -39,10 +56,10 @@ Tampa, FL: KTBW
 Atlanta, GA: KFFC
 Moody AFB, GA: KVAX
 Robins AFB, GA: KJGX
-Kauai, HI: KHKI
-Kohala, HI: KHKM
-Molokai, HI: KHMO
-South Shore, HI: KHWA
+Kauai, HI: PHKI
+Kohala, HI: PHKM
+Molokai, HI: PHMO
+South Shore, HI: PHWA
 Davenport, IA: KDVN
 Des Moines, IA: KDMX
 Boise, ID: KCBX
@@ -151,3 +168,4 @@ Milwaukee, WI: KMKX
 Charleston, WV: KRLX
 Cheyenne, WY: KCYS
 Riverton, WY: KRIW
+San Juan, Puerto Rico: TJUA
