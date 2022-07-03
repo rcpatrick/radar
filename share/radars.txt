@@ -4,6 +4,7 @@ Central Great Lakes: CENTGRLAKES
 CONUS: CONUS
 CONUS-LARGE: CONUS-LARGE
 Guam: GUAM
+Puerto Rico: TJUA
 Hawaii: HAWAII
 Northeast: NORTHEAST
 North Rockies: NORTHROCKIES
@@ -168,4 +169,3 @@ Milwaukee, WI: KMKX
 Charleston, WV: KRLX
 Cheyenne, WY: KCYS
 Riverton, WY: KRIW
-San Juan, Puerto Rico: TJUA
