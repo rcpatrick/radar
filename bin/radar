@@ -3,7 +3,7 @@
 
 
 radarfile=/usr/local/share/radar/radars.txt
-baseurl=https://radar.weather.gov/ridge/lite/
+baseurl=https://radar.weather.gov/ridge/standard/
 siteregex="^[Kk|Pp][A-Za-z][A-Za-z][A-Za-z]$"
 
 viewsite() { # use viewsite $url -v for verbose output
